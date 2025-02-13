@@ -114,7 +114,7 @@ const App = () => {
     <DndProvider backend={HTML5Backend}>
       <div className="container">
         <div className="header">
-          <h1 className="title">Ranking Tool</h1>
+          <h1 className="title">Ranking Tool by https://github.com/dhruvtand7</h1>
           <button onClick={() => setIsCreatingList(true)} className="button">
             <Plus className="w-4 h-4 mr-2" />
             New List
