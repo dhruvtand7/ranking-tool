@@ -3,6 +3,8 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { getFirestore, collection, addDoc, onSnapshot, updateDoc, doc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
+import { TouchBackend } from 'react-dnd-touch-backend';
+import { isMobile } from 'react-device-detect';
 import { Plus, GripVertical, X } from 'lucide-react';
 import './App.css';
 
@@ -111,7 +113,7 @@ const App = () => {
   };
 
   return (
-    <DndProvider backend={HTML5Backend}>
+    <DndProvider backend={isMobile ? TouchBackend : HTML5Backend} options={{ enableMouseEvents: true }}>
       <div className="container">
         <div className="header">
           <h1 className="title">Ranking Tool by https://github.com/dhruvtand7</h1>
